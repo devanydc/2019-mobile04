@@ -24,16 +24,21 @@ public class ProfileBundleActivity extends AppCompatActivity {
         ageText = findViewById(R.id.text_age);
         // TODO: bind here
 
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            // TODO: display value here
-            String username = extras.getString(USERNAME_KEY);
-            String name = extras.getString(NAME_KEY);
-            int age = extras.getInt(AGE_KEY);
 
-            usernameText.setText(username);
-            nameText.setText(name);
-            ageText.setText(age);
+
+        if (getIntent().getExtras() != null) {
+            // TODO: display value here
+            Bundle extras = getIntent().getExtras();
+//            String username = extras.getString(USERNAME_KEY);
+////            String name = extras.getString(NAME_KEY);
+////            int age = extras.getInt(AGE_KEY);
+////
+////            usernameText.setText(username);
+////            nameText.setText(name);
+////            ageText.setText(age);
+            usernameText.setText(extras.getString("username"));
+            nameText.setText(extras.getString("name"));
+            ageText.setText(extras.getString("age"));
         }
     }
 }

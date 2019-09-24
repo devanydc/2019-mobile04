@@ -30,16 +30,22 @@ public class BundleActivity extends AppCompatActivity {
     }
 
     public void handleSubmit(View view) {
-        Intent intent= new Intent(this,ProfileBundleActivity.class);
-        String username =usernameInput.getText().toString();
-        String name = nameInput.getText().toString();
-        int age = Integer.parseInt(ageInput.getText().toString());
-
-        usernameText.setText(username);
-        nameText.setText(name);
-        ageText.setText(age);
+//        Intent intent= new Intent(this,ProfileBundleActivity.class);
+//        String username =usernameInput.getText().toString();
+//        String name = nameInput.getText().toString();
+//        int age = Integer.parseInt(ageInput.getText().toString());
+//
+//        usernameText.setText(username);
+//        nameText.setText(name);
+//        ageText.setText(age);
+//        startActivity(intent);
+        Bundle bundle = new Bundle();
+        bundle.putString("username", usernameInput.getText().toString());
+        bundle.putString("name", nameInput.getText().toString());
+        bundle.putString("age", ageInput.getText().toString());
+        Intent intent = new Intent(this, ProfileBundleActivity.class);
+        intent.putExtras(bundle);
         startActivity(intent);
-
     }
 
 }
